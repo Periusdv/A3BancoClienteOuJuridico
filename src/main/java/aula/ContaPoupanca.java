@@ -9,23 +9,25 @@ package aula;
  *
  * @author samara
  */
-public class ContaPoupanca extends Conta{
+public class ContaPoupanca extends Conta {
+
     private double rendimento;
-    public ContaPoupanca(int numero, double rendimento, Agencia agencia){
+
+    public ContaPoupanca(int numero, double rendimento, Agencia agencia) {
         super(numero, agencia);
         this.rendimento = rendimento;
-    } 
-    
+    }
+
     @Override
     public void imprimir() {
-        System.out.println("Seu rendimento é : "+this.rendimento);
+        System.out.println("Seu rendimento é : " + this.rendimento);
     }
-    
-    public double getRendimento(){
-        
+
+    public double getRendimento() {
+        return rendimento;
     }
-    
-    public void setRendimento(double rendimento){
-        
-    }    
+
+    public void setRendimento(double rendimento) {
+        this.rendimento = rendimento;
+    }
 }
