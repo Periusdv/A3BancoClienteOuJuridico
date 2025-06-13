@@ -23,6 +23,14 @@ public abstract class Conta implements OperacaoBancaria {
         return -
     }
     
+    public Agencia getAgencia(){
+        return agencia;
+    }
+    
+    public int getNumero(){
+        return numero;
+    }
+    
     public void depositar(double valor){
         this.saldo = this.saldo + valor;;;; 
     }
