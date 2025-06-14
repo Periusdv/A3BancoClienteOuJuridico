@@ -13,18 +13,18 @@ import java.util.ArrayList;
  */
 public class PessoaJuridica extends Pessoa {
 
-    private int cnpj;
+    private String cnpj;
 
-    PessoaJuridica(String nome, ArrayList<Conta> listacontas, int cnpj) {
+    PessoaJuridica(String nome, ArrayList<Conta> listacontas, String cnpj) {
         super(nome, listacontas);
         this.cnpj = cnpj;
     }
 
-    public int getCnpj() {
+    public String getCnpj() {
         return this.cnpj;
     }
 
-    public void setCnpj(int cnpj) {
+    public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
     }
 }

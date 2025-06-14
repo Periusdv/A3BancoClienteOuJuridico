@@ -13,18 +13,18 @@ import java.util.ArrayList;
  */
 public class PessoaFisica extends Pessoa {
 
-    private int cpf;
+    private String cpf;
 
-    PessoaFisica(String nome, ArrayList<Conta> listacontas, int cpf) {
+    PessoaFisica(String nome, ArrayList<Conta> listacontas, String cpf) {
         super(nome, listacontas);
         this.cpf = cpf;
     }
 
-    public int getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(int cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 }

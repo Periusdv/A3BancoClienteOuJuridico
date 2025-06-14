@@ -17,7 +17,8 @@ public class Aula {
         Scanner entrada = new Scanner(System.in);
         Random random = new Random();
         String nome;
-        int cnpj, cpf, tipoConta, tipoConta2, numAgencia;
+        int tipoConta, tipoConta2, numAgencia;
+        String cpf, cnpj;
         PessoaJuridica p1;
         PessoaFisica p2;
         ContaCorrente c1;
@@ -52,7 +53,7 @@ public class Aula {
         switch (opcao) {
             case 1:
                 System.out.println("Informe o cnpj: ");
-                cnpj = entrada.nextInt();
+                cnpj = entrada.next();
                 p1 = new PessoaJuridica(nome, listaContas, cnpj);
 
                 System.out.println("Deseja criar conta corrente? Digite 1- sim e 2- Não");
@@ -79,7 +80,7 @@ public class Aula {
                 break;
             case 2:
                 System.out.println("Informe o cpf: ");
-                cpf = entrada.nextInt();
+                cpf = entrada.next();
                 p2 = new PessoaFisica(nome, listaContas, cpf);
 
                 System.out.println("Deseja criar conta corrente? Digite 1- sim e 2- Não");
