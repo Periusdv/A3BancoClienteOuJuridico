@@ -45,7 +45,7 @@ public abstract class Conta implements OperacaoBancaria {
     }
 
     public void depositar(double valor) {
-        this.saldo = this.saldo + valor;;;;
+        this.saldo = this.saldo + valor;
     }
 
     public void sacar(double valor) {

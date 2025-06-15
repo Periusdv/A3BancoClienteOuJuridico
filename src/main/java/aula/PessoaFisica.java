@@ -15,7 +15,7 @@ public class PessoaFisica extends Pessoa {
 
     private String cpf;
 
-    PessoaFisica(String nome, ArrayList<Conta> listacontas, String cpf) {
+    public PessoaFisica(String nome, ArrayList<Conta> listacontas, String cpf) {
         super(nome, listacontas);
         this.cpf = cpf;
     }
