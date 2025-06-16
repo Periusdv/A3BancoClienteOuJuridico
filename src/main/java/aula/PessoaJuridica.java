@@ -15,7 +15,7 @@ public class PessoaJuridica extends Pessoa {
 
     private String cnpj;
 
-    PessoaJuridica(String nome, ArrayList<Conta> listacontas, String cnpj) {
+    public PessoaJuridica(String nome, ArrayList<Conta> listacontas, String cnpj) {
         super(nome, listacontas);
         this.cnpj = cnpj;
     }

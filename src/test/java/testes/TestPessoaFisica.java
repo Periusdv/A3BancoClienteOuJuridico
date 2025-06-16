@@ -23,4 +23,12 @@ public class TestPessoaFisica {
         assertEquals("123.456.789-00", pessoaFisica.getCpf());
         assertEquals(contas, pessoaFisica.getListaContas());
     }
+    
+    @Test
+    public void testSetCpf() {
+        PessoaFisica pessoaFisica = new PessoaFisica("Pedro", new ArrayList<>(), "000.000.000-00");
+        
+        pessoaFisica.setCpf("111.222.333-44");
+        assertEquals("111.222.333-44", pessoaFisica.getCpf());
+    }
 }
