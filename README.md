@@ -4,8 +4,11 @@
 
 Integrantes:
 Gabriel Teotônio Cordeiro 10724111027
+
 Luan Campi Galatti 1072419087
+
 Davi Dias Perius 10724114628
+
 Victor Lucio Scheuer Rodrigues 1072410296
 
 Trabalho A3 de Gestão e Qualidade de Software Prof.ª Samara Soares Leal
