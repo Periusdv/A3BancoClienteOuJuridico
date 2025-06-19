@@ -3,6 +3,7 @@
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Periusdv_A3BancoClienteOuJuridico&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Periusdv_A3BancoClienteOuJuridico)
 
 Integrantes:
+
 Gabriel Teotônio Cordeiro 10724111027
 
 Luan Campi Galatti 1072419087
