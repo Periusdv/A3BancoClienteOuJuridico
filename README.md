@@ -1,2 +1,3 @@
+[![Github Actions Status for Periusdv/A3BancoClienteOuJuridico](https://github.com/Periusdv/A3BancoClienteOuJuridico/workflows/Java%20CI%20with%20Maven/badge.svg)](https://github.com/Periusdv/A3BancoClienteOuJuridico/actions)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=Periusdv_A3BancoClienteOuJuridico&metric=coverage)](https://sonarcloud.io/summary/new_code?id=Periusdv_A3BancoClienteOuJuridico)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Periusdv_A3BancoClienteOuJuridico&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Periusdv_A3BancoClienteOuJuridico)
