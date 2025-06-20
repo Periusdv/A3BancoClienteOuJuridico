@@ -15,7 +15,7 @@ public abstract class Conta implements OperacaoBancaria {
     private double saldo = 0;
     private Agencia agencia;
 
-    public Conta(int num, Agencia agencia) {
+    protected Conta(int num, Agencia agencia) {
         this.numero = num;
         this.agencia = agencia;
     }

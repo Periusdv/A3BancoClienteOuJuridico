@@ -16,12 +16,12 @@ public abstract class Pessoa {
     private String nome;
     private ArrayList<Conta> listacontas;
 
-    public Pessoa(String nome, ArrayList<Conta> listacontas) {
+    protected Pessoa(String nome, ArrayList<Conta> listacontas) {
         this.nome = nome;
         this.listacontas = listacontas;
     }
 
-    public ArrayList getListaContas() {
+    public ArrayList<Conta> getListaContas() {
         return this.listacontas;
     }
 
