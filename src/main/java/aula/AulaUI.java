@@ -28,7 +28,7 @@ public class AulaUI {
             double salario = 0;
             if (criarCorrente) {
                 System.out.println("Informe o Salário: ");
-                salario = input.nextDouble();
+                salario = Double.parseDouble(input.next().replace(",", "."));
             }
             
             System.out.println("Deseja criar uma Conta Poupança? 1-Sim | 2-Não");
@@ -37,7 +37,7 @@ public class AulaUI {
             double rendimento = 0;
             if (criarPoupanca) {
                 System.out.println("Informe o Rendimento: ");
-                rendimento = input.nextDouble();
+                rendimento = Double.parseDouble(input.next().replace(",", "."));
             }
             
             aulaServico.criarPessoaJuridica(nome, cnpj, numAgencia, criarCorrente, salario, criarPoupanca, rendimento);
@@ -52,7 +52,7 @@ public class AulaUI {
             double salario = 0;
             if (criarCorrente) {
                 System.out.println("Informe o Salário: ");
-                salario = input.nextDouble();
+                salario = Double.parseDouble(input.next().replace(",", "."));
             }
             
             System.out.println("Deseja criar uma Conta Poupança? 1-Sim | 2-Não");
@@ -61,7 +61,7 @@ public class AulaUI {
             double rendimento = 0;
             if (criarPoupanca) {
                 System.out.println("Informe o Rendimento: ");
-                rendimento = input.nextDouble();
+                rendimento = Double.parseDouble(input.next().replace(",", "."));
             }
             
             aulaServico.criarPessoaFisica(nome, cpf, numAgencia, criarCorrente, salario, criarPoupanca, rendimento);
