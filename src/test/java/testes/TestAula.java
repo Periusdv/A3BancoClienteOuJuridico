@@ -4,7 +4,7 @@ import aula.AulaUI;
 import org.junit.jupiter.api.Test;
 import java.io.ByteArrayInputStream;
 
-public class TestAulaUI {
+public class TestAula {
     
     @Test
     public void testPessoaJuridicaComContas() {
