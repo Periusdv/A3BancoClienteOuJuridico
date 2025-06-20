@@ -5,6 +5,7 @@
  */
 package aula;
 
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
@@ -23,7 +24,9 @@ public class ContaPoupanca extends Conta {
 
     @Override
     public void imprimir() {
-        LOGGER.info(String.format("Seu rendimento é: %.2f", this.rendimento));
+        if (LOGGER.isLoggable(Level.INFO)) {
+            LOGGER.info(String.format("Seu rendimento é: %.2f", this.rendimento));
+        }
     }
 
     public double getRendimento() {

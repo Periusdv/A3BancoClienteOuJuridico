@@ -5,6 +5,7 @@
  */
 package aula;
 
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
@@ -23,7 +24,9 @@ public class ContaCorrente extends Conta {
 
     @Override
     public void imprimir() {
-        LOGGER.info(String.format("Seu salário é: R$ %.2f", this.salario));
+        if (LOGGER.isLoggable(Level.INFO)) {
+            LOGGER.info(String.format("Seu salário é: R$ %.2f", this.salario));
+        }
     }
 
     public double getSalario() {
