@@ -28,7 +28,7 @@ class TestAula {
     }
 
     @Test
-    public void testPessoaJuridicaComContas() {
+    void testPessoaJuridicaComContas() {
         String input = String.join(System.lineSeparator(), "1", "João", "1", "12345678000199", "1", "5000,0", "1", "0,05");
         String output = executarComLogger(input);
         
