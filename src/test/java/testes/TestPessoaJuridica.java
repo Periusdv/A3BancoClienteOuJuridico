@@ -8,8 +8,7 @@ import java.util.ArrayList;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-
-public class TestPessoaJuridica {
+ class TestPessoaJuridica {
     
     @Test
     public void testConstrutorPessoaJuridica() {
@@ -26,7 +25,7 @@ public class TestPessoaJuridica {
     }
     
     @Test
-    public void testSetCnpj() {
+    void testSetCnpj() {
         PessoaJuridica pessoaJuridica = new PessoaJuridica("Amanda", new ArrayList<>(), "00.000.000/0000-00");
         
         pessoaJuridica.setCnpj("12.345.678/0000-00");

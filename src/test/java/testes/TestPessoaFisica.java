@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class TestPessoaFisica {
 
     @Test
-    public void testConstrutorPessoaFisica() {
+    void testConstrutorPessoaFisica() {
         Agencia agencia = new Agencia(1);
         ContaCorrente conta = new ContaCorrente(123, 2500.0, agencia);
         ArrayList<Conta> contas = new ArrayList<>();
@@ -25,7 +25,7 @@ public class TestPessoaFisica {
     }
     
     @Test
-    public void testSetCpf() {
+    void testSetCpf() {
         PessoaFisica pessoaFisica = new PessoaFisica("Pedro", new ArrayList<>(), "000.000.000-00");
         
         pessoaFisica.setCpf("111.222.333-44");

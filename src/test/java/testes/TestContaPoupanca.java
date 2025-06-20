@@ -5,31 +5,30 @@ import aula.ContaPoupanca;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-
-public class TestContaPoupanca {
+ class TestContaPoupanca {
     
     private ContaPoupanca contaPoupanca;
     private Agencia agencia;
     
     @BeforeEach
-    public void setUp() {
+    void setUp() {
         agencia = new Agencia(1);
         contaPoupanca = new ContaPoupanca(1234, 0.05, agencia);
     }
     
     @Test
-    public void testGetRendimento() {
+    void testGetRendimento() {
         assertEquals(0.05, contaPoupanca.getRendimento());
     }
     
     @Test
-    public void testSetRendimento() {
+    void testSetRendimento() {
         contaPoupanca.setRendimento(0.07);
         assertEquals(0.07, contaPoupanca.getRendimento());
     }
     
     @Test
-    public void testImprimir() {
+    void testImprimir() {
         contaPoupanca.imprimir();
     }
 }
