@@ -5,12 +5,14 @@ import java.util.Random;
 
 public class AulaServico {
     
+    private Random random = new Random();
+    
     public PessoaJuridica criarPessoaJuridica(String nome, String cnpj, int numAgencia, boolean criarCorrente, double salario, boolean criarPoupanca, double rendimento) {
        
         ArrayList<Conta> contas = new ArrayList<>();
         Agencia agencia = new Agencia(numAgencia);
         PessoaJuridica pessoajuridica = new PessoaJuridica(nome, contas, cnpj);
-        Random random = new Random();
+        
         
         if (criarCorrente) {
             ContaCorrente contacorrente = new ContaCorrente(random.nextInt(100), salario, agencia);
@@ -30,8 +32,7 @@ public class AulaServico {
         ArrayList<Conta> contas = new ArrayList<>();
         Agencia agencia = new Agencia(numAgencia);
         PessoaFisica pessoafisica = new PessoaFisica(nome, contas, cpf);
-        Random random = new Random();
-        
+                
         if (criarCorrente) {
             ContaCorrente contacorrente = new ContaCorrente(random.nextInt(100), salario, agencia);
             pessoafisica.setListaContas(contacorrente);
