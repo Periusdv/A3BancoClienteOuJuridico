@@ -5,6 +5,8 @@
  */
 package aula;
 
+import java.util.logging.Logger;
+
 /**
  *
  * @author samara
@@ -12,6 +14,7 @@ package aula;
 public class ContaCorrente extends Conta {
 
     private double salario;
+    private static final Logger LOGGER = Logger.getLogger(ContaCorrente.class.getName());
 
     public ContaCorrente(int numero, double salario, Agencia agencia) {
         super(numero, agencia);
@@ -20,7 +23,7 @@ public class ContaCorrente extends Conta {
 
     @Override
     public void imprimir() {
-        System.out.println("Seu salário é : " + this.salario);
+        LOGGER.info(String.format("Seu salário é: R$ %.2f", this.salario));
     }
 
     public double getSalario() {

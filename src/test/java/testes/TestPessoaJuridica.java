@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
  class TestPessoaJuridica {
     
     @Test
-    public void testConstrutorPessoaJuridica() {
+    void testConstrutorPessoaJuridica() {
         Agencia agencia = new Agencia(1);
         ContaCorrente conta = new ContaCorrente(111, 5000, agencia);
         ArrayList<Conta> contas = new ArrayList<>();

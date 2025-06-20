@@ -5,7 +5,7 @@
  */
 package aula;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -15,7 +15,7 @@ public class PessoaJuridica extends Pessoa {
 
     private String cnpj;
 
-    public PessoaJuridica(String nome, ArrayList<Conta> listacontas, String cnpj) {
+    public PessoaJuridica(String nome, List<Conta> listacontas, String cnpj) {
         super(nome, listacontas);
         this.cnpj = cnpj;
     }

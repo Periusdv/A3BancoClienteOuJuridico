@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class TestPessoaFisica {
+class TestPessoaFisica {
 
     @Test
     void testConstrutorPessoaFisica() {

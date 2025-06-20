@@ -5,7 +5,7 @@
  */
 package aula;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -14,14 +14,14 @@ import java.util.ArrayList;
 public abstract class Pessoa {
 
     private String nome;
-    private ArrayList<Conta> listacontas;
+    private List<Conta> listacontas;
 
-    protected Pessoa(String nome, ArrayList<Conta> listacontas) {
+    protected Pessoa(String nome, List<Conta> listacontas) {
         this.nome = nome;
         this.listacontas = listacontas;
     }
 
-    public ArrayList<Conta> getListaContas() {
+    public List<Conta> getListaContas() {
         return this.listacontas;
     }
 

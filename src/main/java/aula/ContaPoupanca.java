@@ -5,6 +5,8 @@
  */
 package aula;
 
+import java.util.logging.Logger;
+
 /**
  *
  * @author samara
@@ -12,6 +14,7 @@ package aula;
 public class ContaPoupanca extends Conta {
 
     private double rendimento;
+    private static final Logger LOGGER = Logger.getLogger(ContaPoupanca.class.getName());
 
     public ContaPoupanca(int numero, double rendimento, Agencia agencia) {
         super(numero, agencia);
@@ -20,7 +23,7 @@ public class ContaPoupanca extends Conta {
 
     @Override
     public void imprimir() {
-        System.out.println("Seu rendimento é : " + this.rendimento);
+        LOGGER.info(String.format("Seu rendimento é: %.2f", this.rendimento));
     }
 
     public double getRendimento() {

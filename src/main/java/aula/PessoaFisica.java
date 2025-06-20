@@ -5,7 +5,7 @@
  */
 package aula;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -15,7 +15,7 @@ public class PessoaFisica extends Pessoa {
 
     private String cpf;
 
-    public PessoaFisica(String nome, ArrayList<Conta> listacontas, String cpf) {
+    public PessoaFisica(String nome, List<Conta> listacontas, String cpf) {
         super(nome, listacontas);
         this.cpf = cpf;
     }
