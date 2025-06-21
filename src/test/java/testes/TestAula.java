@@ -4,13 +4,15 @@ import aula.AulaUI;
 import org.junit.jupiter.api.Test;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.util.Scanner;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.util.logging.*;
 
 class TestAula {
     
     private String executarComLogger(String inputSimulado) {
-        System.setIn(new ByteArrayInputStream(inputSimulado.getBytes()));
+        ByteArrayInputStream inputSimuladoStream = new ByteArrayInputStream(inputSimulado.getBytes());
+        Scanner scanner = new Scanner(inputSimuladoStream);
         
         ByteArrayOutputStream logCapturado = new ByteArrayOutputStream();
         StreamHandler handler = new StreamHandler(logCapturado, new SimpleFormatter());
@@ -20,7 +22,7 @@ class TestAula {
         logger.addHandler(handler);
         logger.setLevel(Level.INFO);
         
-        new AulaUI().executar();
+        new AulaUI().executar(scanner);
         
         handler.flush();
         
@@ -29,7 +31,7 @@ class TestAula {
 
     @Test
     void testPessoaJuridicaComContas() {
-        String input = String.join(System.lineSeparator(), "1", "João", "1", "12345678000199", "1", "5000,0", "1", "0,05");
+        String input = String.join(System.lineSeparator(), "1", "João", "1", "12345678000199", "1", "5000,0", "1", "0,05", "2");
         String output = executarComLogger(input);
         
         assertTrue(output.contains("Informe o nome da Pessoa"));
@@ -40,7 +42,7 @@ class TestAula {
 
     @Test
     void testPessoaJuridicaSemContas() {
-        String input = String.join(System.lineSeparator(), "2", "Ana", "1", "98765432000188", "2", "2");
+        String input = String.join(System.lineSeparator(), "2", "Ana", "1", "98765432000188", "2", "2", "2");
         String output = executarComLogger(input);
         
         assertTrue(output.contains("Informe o nome da Pessoa"));
@@ -49,7 +51,7 @@ class TestAula {
 
     @Test
     void testPessoaFisicaSomenteContaCorrente() {
-        String input = String.join(System.lineSeparator(), "2", "Bernardo", "2", "12345678900", "1", "3000,0", "2");
+        String input = String.join(System.lineSeparator(), "2", "Bernardo", "2", "12345678900", "1", "3000,0", "2", "2");
         String output = executarComLogger(input);
         
         assertTrue(output.contains("Informe o nome da Pessoa"));
@@ -59,7 +61,7 @@ class TestAula {
 
     @Test
     void testPessoaFisicaSomentePoupanca() {
-        String input = String.join(System.lineSeparator(), "3", "Maria", "2", "98765432111", "2", "1", "0,03");
+        String input = String.join(System.lineSeparator(), "3", "Maria", "2", "98765432111", "2", "1", "0,03", "2");
         String output = executarComLogger(input);
         
         assertTrue(output.contains("Informe o nome da Pessoa"));

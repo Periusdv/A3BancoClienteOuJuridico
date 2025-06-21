@@ -86,6 +86,11 @@ public class AulaUI {
 
     public void executar() {
         Scanner input = new Scanner(System.in);
+        executar(input);
+        input.close();
+    }
+    
+    public void executar(Scanner input) {
         AulaServico aulaServico = new AulaServico();
 
         LOGGER.info("Informe qual agencia você deseja criar a conta.\n Agencias Disponíveis: 1, 2 e 3");
@@ -111,7 +116,5 @@ public class AulaUI {
             PessoaFisica pf = aulaServico.criarPessoaFisica(nome, cpf);
             processoConta(input, aulaServico, pf, numAgencia);
         }
-
-        input.close();
     }
 }
