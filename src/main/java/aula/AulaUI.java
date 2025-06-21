@@ -66,7 +66,7 @@ public class AulaUI {
                         cp.depositar(depositarValor);
                     }
                 } else if (operacaoBancaria == 2) {
-                    LOGGER.info("Informe o a quantia que deseja depositar");
+                    LOGGER.info("Informe o a quantia que deseja sacar");
                     sacarValor = input.nextInt();
                     if (contaEscolhida == 1 && cc != null) {
                         cc.sacar(sacarValor);

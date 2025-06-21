@@ -25,7 +25,12 @@ public class ContaCorrente extends Conta {
     @Override
     public void imprimir() {
         if (LOGGER.isLoggable(Level.INFO)) {
-            LOGGER.info(String.format("Seu salário é: R$ %.2f", this.salario));
+            LOGGER.info(String.format(
+                    "=== Conta Corrente ===%nNúmero: %d%nAgência: %d%nSalário: R$ %.2f%nSaldo atual: R$ %.2f", 
+                    getNumero(), 
+                    getAgencia().getNumero(), 
+                    this.salario, 
+                    getSaldo()));
         }
     }
 

@@ -25,7 +25,12 @@ public class ContaPoupanca extends Conta {
     @Override
     public void imprimir() {
         if (LOGGER.isLoggable(Level.INFO)) {
-            LOGGER.info(String.format("Seu rendimento é: %.2f", this.rendimento));
+            LOGGER.info(String.format(
+                    "=== Conta Poupança ===%nNúmero: %d%nAgência: %d%nRendimento: R$ %.2f%nSaldo atual: R$ %.2f",
+                    getNumero(), 
+                    getAgencia().getNumero(), 
+                    this.rendimento, 
+                    getSaldo()));
         }
     }
 
