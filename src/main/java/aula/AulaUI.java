@@ -7,22 +7,12 @@ public class AulaUI {
 
     private static final Logger LOGGER = Logger.getLogger(AulaUI.class.getName());
 
-    private static class DadosConta {
-
-        final boolean criarCorrente;
-        final double salario;
-        final boolean criarPoupanca;
-        final double rendimento;
-
-        DadosConta(boolean criarCorrente, double salario, boolean criarPoupanca, double rendimento) {
-            this.criarCorrente = criarCorrente;
-            this.salario = salario;
-            this.criarPoupanca = criarPoupanca;
-            this.rendimento = rendimento;
-        }
+    private void mostrarDadosConta(Conta conta) {
+        System.out.println("O número da sua conta é: " + conta.getNumero());
+        System.out.println("O número da sua agência é: " + conta.getAgencia().getNumero());
     }
 
-    private DadosConta processoConta(Scanner input) {
+    private void processoConta(Scanner input, AulaServico servico, Pessoa pessoa, int numAgencia) {
 
         LOGGER.info("Deseja criar uma Conta Corrente? 1-Sim | 2-Não");
         boolean criarCorrente = input.nextInt() == 1;
@@ -31,6 +21,11 @@ public class AulaUI {
         if (criarCorrente) {
             LOGGER.info("Informe o Salário: ");
             salario = Double.parseDouble(input.next().replace(",", "."));
+
+            ContaCorrente cc = servico.criarContaCorrente(salario, numAgencia);
+            pessoa.setListaContas(cc);
+            mostrarDadosConta(cc);
+
         }
 
         LOGGER.info("Deseja criar uma Conta Poupança? 1-Sim | 2-Não");
@@ -40,9 +35,11 @@ public class AulaUI {
         if (criarPoupanca) {
             LOGGER.info("Informe o Rendimento: ");
             rendimento = Double.parseDouble(input.next().replace(",", "."));
-        }
-        return new DadosConta(criarCorrente, salario, criarPoupanca, rendimento);
 
+            ContaPoupanca cp = servico.criarContaPoupanca(rendimento, numAgencia);
+            pessoa.setListaContas(cp);
+            mostrarDadosConta(cp);
+        }
     }
 
     public void executar() {
@@ -62,16 +59,15 @@ public class AulaUI {
             LOGGER.info("Informe o CNPJ: ");
             String cnpj = input.next();
 
-            DadosConta dados = processoConta(input);
+            PessoaJuridica pj = aulaServico.criarPessoaJuridica(nome, cnpj);
+            processoConta(input, aulaServico, pj, numAgencia);
 
-            aulaServico.criarPessoaJuridica(nome, cnpj, numAgencia, dados.criarCorrente, dados.salario, dados.criarPoupanca, dados.rendimento);
         } else if (tipoPessoa == 2) {
             LOGGER.info("Informe o CPF: ");
             String cpf = input.next();
 
-            DadosConta dados = processoConta(input);
-
-            aulaServico.criarPessoaFisica(nome, cpf, numAgencia, dados.criarCorrente, dados.salario, dados.criarPoupanca, dados.rendimento);
+            PessoaFisica pf = aulaServico.criarPessoaFisica(nome, cpf);
+            processoConta(input, aulaServico, pf, numAgencia);
         }
 
         input.close();

@@ -7,41 +7,23 @@ public class AulaServico {
 
     private SecureRandom random = new SecureRandom();
 
-    public PessoaJuridica criarPessoaJuridica(String nome, String cnpj, int numAgencia, boolean criarCorrente, double salario, boolean criarPoupanca, double rendimento) {
-
+    public PessoaJuridica criarPessoaJuridica(String nome, String cnpj) {
         ArrayList<Conta> contas = new ArrayList<>();
-        Agencia agencia = new Agencia(numAgencia);
-        PessoaJuridica pessoajuridica = new PessoaJuridica(nome, contas, cnpj);
-
-        if (criarCorrente) {
-            ContaCorrente contacorrente = new ContaCorrente(random.nextInt(100), salario, agencia);
-            pessoajuridica.setListaContas(contacorrente);
-        }
-
-        if (criarPoupanca) {
-            ContaPoupanca contapoupanca = new ContaPoupanca(random.nextInt(100), rendimento, agencia);
-            pessoajuridica.setListaContas(contapoupanca);
-        }
-
-        return pessoajuridica;
+        return new PessoaJuridica(nome, contas, cnpj);
     }
 
-    public PessoaFisica criarPessoaFisica(String nome, String cpf, int numAgencia, boolean criarCorrente, double salario, boolean criarPoupanca, double rendimento) {
-
+    public PessoaFisica criarPessoaFisica(String nome, String cpf) {
         ArrayList<Conta> contas = new ArrayList<>();
+        return new PessoaFisica(nome, contas, cpf);
+    }
+
+    public ContaCorrente criarContaCorrente(double salario, int numAgencia) {
         Agencia agencia = new Agencia(numAgencia);
-        PessoaFisica pessoafisica = new PessoaFisica(nome, contas, cpf);
+        return new ContaCorrente(random.nextInt(100), salario, agencia);
+    }
 
-        if (criarCorrente) {
-            ContaCorrente contacorrente = new ContaCorrente(random.nextInt(100), salario, agencia);
-            pessoafisica.setListaContas(contacorrente);
-        }
-
-        if (criarPoupanca) {
-            ContaPoupanca contapoupanca = new ContaPoupanca(random.nextInt(100), rendimento, agencia);
-            pessoafisica.setListaContas(contapoupanca);
-        }
-
-        return pessoafisica;
+    public ContaPoupanca criarContaPoupanca(double rendimento, int numAgencia) {
+        Agencia agencia = new Agencia(numAgencia);
+        return new ContaPoupanca(random.nextInt(100), rendimento, agencia);
     }
 }
