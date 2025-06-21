@@ -48,17 +48,37 @@ public class AulaUI {
         int prosseguirOperacaoBancaria = input.nextInt();
 
         if (prosseguirOperacaoBancaria == 1) {
-            int operacaoBancaria = -1;
-            while (operacaoBancaria != 4) {
-                LOGGER.info(String.format("Bem vindo(a) %s%n Informe qual Operação Bancaria você deseja reaizar: %n Digite %n 1: Depositar %n 2: Sacar %n 3: Imprimir contacorrente e contaPoupanca %n 4: Sair", pessoa.getNome()));
+            int operacaoBancaria;
+            int contaEscolhida = -1;
+            double depositarValor;
+            double sacarValor;
+            while (contaEscolhida != 3) {
+                LOGGER.info(String.format("Bem vindo(a) %s%n Informe Qual conta você deseja escolher %n Digite %n 1: Conta Corrente %n 2: Conta Poupança %n 3: Sair", pessoa.getNome()));
+                contaEscolhida = input.nextInt();
+                LOGGER.info("Informe qual Operação Bancaria você deseja reaizar: \n Digite \n 1: Depositar \n 2: Sacar \n 3: Imprimir contacorrente e contaPoupanca");
                 operacaoBancaria = input.nextInt();
                 if (operacaoBancaria == 1) {
-
+                    LOGGER.info("Informe o a quantia que deseja depositar");
+                    depositarValor = input.nextInt();
+                    if (contaEscolhida == 1 && cc != null) {
+                        cc.depositar(depositarValor);
+                    } else if(contaEscolhida == 2 && cp != null){
+                        cp.depositar(depositarValor);
+                    }
                 } else if (operacaoBancaria == 2) {
-                    
+                    LOGGER.info("Informe o a quantia que deseja depositar");
+                    sacarValor = input.nextInt();
+                    if (contaEscolhida == 1 && cc != null) {
+                        cc.sacar(sacarValor);
+                    } else if(contaEscolhida == 2 && cp != null) {
+                        cp.sacar(sacarValor);
+                    }
                 } else if (operacaoBancaria == 3) {
-                    cc.imprimir();
-                    cp.imprimir();
+                    if (contaEscolhida == 1 && cc != null) {
+                        cc.imprimir();
+                    } else if(contaEscolhida == 2 && cp != null) {
+                        cp.imprimir();
+                    }
                 }
             }
         }
