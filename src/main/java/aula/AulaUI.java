@@ -1,6 +1,7 @@
 package aula;
 
 import java.util.Scanner;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class AulaUI {
@@ -8,8 +9,9 @@ public class AulaUI {
     private static final Logger LOGGER = Logger.getLogger(AulaUI.class.getName());
 
     private void mostrarDadosConta(Conta conta) {
-        System.out.println("O número da sua conta é: " + conta.getNumero());
-        System.out.println("O número da sua agência é: " + conta.getAgencia().getNumero());
+        if (LOGGER.isLoggable(Level.INFO)) {
+            LOGGER.info(String.format("O número da sua conta é: %d, \nO número da sua agência é: %d", conta.getNumero(), conta.getAgencia().getNumero()));
+        }
     }
 
     private void processoConta(Scanner input, AulaServico servico, Pessoa pessoa, int numAgencia) {
@@ -26,6 +28,8 @@ public class AulaUI {
             pessoa.setListaContas(cc);
             mostrarDadosConta(cc);
 
+            cc.imprimir();
+
         }
 
         LOGGER.info("Deseja criar uma Conta Poupança? 1-Sim | 2-Não");
@@ -39,6 +43,9 @@ public class AulaUI {
             ContaPoupanca cp = servico.criarContaPoupanca(rendimento, numAgencia);
             pessoa.setListaContas(cp);
             mostrarDadosConta(cp);
+
+            cp.imprimir();
+
         }
     }
 
