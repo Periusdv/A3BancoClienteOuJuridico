@@ -10,13 +10,15 @@ public class AulaUI {
 
     private void mostrarDadosConta(Conta conta) {
         if (LOGGER.isLoggable(Level.INFO)) {
-            LOGGER.info(String.format("O número da sua conta é: %d, \nO número da sua agência é: %d", conta.getNumero(), conta.getAgencia().getNumero()));
+            LOGGER.info(String.format("O número da sua conta é: %d, %nO número da sua agência é: %d", conta.getNumero(), conta.getAgencia().getNumero()));
         }
     }
 
     private void processoConta(Scanner input, AulaServico servico, Pessoa pessoa, int numAgencia) {
+        ContaCorrente cc = null;
+        ContaPoupanca cp = null;
 
-        LOGGER.info("Deseja criar uma Conta Corrente? 1-Sim | 2-Não");
+        LOGGER.info("Deseja criar uma Conta Corrente?\n1-Sim | 2-Não");
         boolean criarCorrente = input.nextInt() == 1;
 
         double salario = 0;
@@ -24,15 +26,12 @@ public class AulaUI {
             LOGGER.info("Informe o Salário: ");
             salario = Double.parseDouble(input.next().replace(",", "."));
 
-            ContaCorrente cc = servico.criarContaCorrente(salario, numAgencia);
+            cc = servico.criarContaCorrente(salario, numAgencia);
             pessoa.setListaContas(cc);
             mostrarDadosConta(cc);
-
-            cc.imprimir();
-
         }
 
-        LOGGER.info("Deseja criar uma Conta Poupança? 1-Sim | 2-Não");
+        LOGGER.info("Deseja criar uma Conta Poupança?\n1-Sim | 2-Não");
         boolean criarPoupanca = input.nextInt() == 1;
 
         double rendimento = 0;
@@ -40,12 +39,28 @@ public class AulaUI {
             LOGGER.info("Informe o Rendimento: ");
             rendimento = Double.parseDouble(input.next().replace(",", "."));
 
-            ContaPoupanca cp = servico.criarContaPoupanca(rendimento, numAgencia);
+            cp = servico.criarContaPoupanca(rendimento, numAgencia);
             pessoa.setListaContas(cp);
             mostrarDadosConta(cp);
+        }
 
-            cp.imprimir();
+        LOGGER.info("Deseja Fazer uma Operação Bancaria?\n1-Sim  2-Não");
+        int prosseguirOperacaoBancaria = input.nextInt();
 
+        if (prosseguirOperacaoBancaria == 1) {
+            int operacaoBancaria = -1;
+            while (operacaoBancaria != 4) {
+                LOGGER.info(String.format("Bem vindo(a) %s%n Informe qual Operação Bancaria você deseja reaizar: %n Digite %n 1: Depositar %n 2: Sacar %n 3: Imprimir contacorrente e contaPoupanca %n 4: Sair", pessoa.getNome()));
+                operacaoBancaria = input.nextInt();
+                if (operacaoBancaria == 1) {
+
+                } else if (operacaoBancaria == 2) {
+                    
+                } else if (operacaoBancaria == 3) {
+                    cc.imprimir();
+                    cp.imprimir();
+                }
+            }
         }
     }
 
@@ -53,7 +68,7 @@ public class AulaUI {
         Scanner input = new Scanner(System.in);
         AulaServico aulaServico = new AulaServico();
 
-        LOGGER.info("Informe qual agencia você deseja criar a conta. Agencias Disponíveis: 1, 2 e 3");
+        LOGGER.info("Informe qual agencia você deseja criar a conta.\n Agencias Disponíveis: 1, 2 e 3");
         int numAgencia = input.nextInt();
 
         LOGGER.info("Informe o nome da Pessoa: ");
