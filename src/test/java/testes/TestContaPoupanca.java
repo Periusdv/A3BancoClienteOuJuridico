@@ -41,10 +41,10 @@ import static org.junit.jupiter.api.Assertions.*;
         handler.setLevel(Level.INFO);
         
         Agencia agenciaTeste = new Agencia(3);
-        ContaPoupanca contaPoupanca = new ContaPoupanca(765, 0.07, agenciaTeste);
-        contaPoupanca.depositar(1000);
+        ContaPoupanca contapoupanca = new ContaPoupanca(765, 0.07, agenciaTeste);
+        contapoupanca.depositar(1000);
         
-        contaPoupanca.imprimir();
+        contapoupanca.imprimir();
         
         String logs = handler.getLog();
         assertTrue(logs.contains("Conta Poupança"));
