@@ -59,7 +59,7 @@ Todas as Saidas estão relacionadas aos testes acima com a injeção de dados de
 ## ID Do Caso de Testes: CT-003
 
 Item do Teste:TestContaCorrente
-dentro dele ha testGetSalario,testSetSalario,testNumeroConta,testAgenciaConta,testImprimir.
+dentro dele ha testGetSalario,testSetSalario,testNumeroConta,testAgenciaConta,testImprimir,testSetSaldo,testSetAgencia,testSetNumero,testSacarComSaldoSuficiente,testSacarComSaldoInsuficiente
 
 Expecificação de Entrada:
 
@@ -71,14 +71,27 @@ Expecificação de Entrada:
 
 4.testAgenciaConta:Agencia 1,Conta Corente.
 
-5.testImprimir:Chama Imprimir com informações de conta corrente.
+5.testImprimir:Criando metodo com informações da conta corrente.
 
+6.testSetSaldo:Saldo 400,Conta Corente,Rendimento 0,02.
+
+7.testSetAgencia:Agencia 28,Conta Corente,Numero da conta.
+
+8.testSetNumero:Numero da conta,Conta Corente.
+
+9.testSacarComSaldoSuficiente:Saldo 200,Sacar 100,Conta Corente,Rendimento 0,02.
+
+10.testSacarComSaldoInsuficiente:Saldo 50,Sacar 100,Conta Corente,Rendimento 0,02.
 Procedimento:
 
-sobre o procedimeto geral dos 2 primeiros testes os testes vao simular uma injeção de dados para testar pricipalmente o salario e o rendimeto.
+sobre o procedimeto:
+geral dos 2 primeiros testes os testes vao simular uma injeção de dados para testar pricipalmente o salario e o rendimeto.
 ja no 2  teste sera testado Numero da conta e conta corente.
 no 3 teste sera testado a agencia e a conta corente.
-no ultimo testes o imprimir ele mostra o salario e seu rendimento.
+no 4 testes o imprimir ele mostra o salario e seu rendimento.
+no teste 5 deve ser testado se foi posivivel criar uma conta corente com os dados istanciados.
+nos tests 6 ate 9 os testes se baseam interamente em testar o numero da agencia o sacque de dinheiro e o rendimento.
+no 10 teste e testado se e posivel sacar mais do que vc posui na conta.
 
 Espificação de Saida:
 Nehuma saida pode ser vista nem mesmo pelo Systema.
