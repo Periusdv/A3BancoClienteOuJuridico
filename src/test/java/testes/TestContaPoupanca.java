@@ -3,6 +3,7 @@ package testes;
 import aula.Agencia;
 import aula.ContaPoupanca;
 import java.util.logging.Handler;
+import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 import org.junit.jupiter.api.BeforeEach;
@@ -36,6 +37,8 @@ import static org.junit.jupiter.api.Assertions.*;
         TestLogHandler handler = new TestLogHandler();
         logger.addHandler(handler);
         logger.setUseParentHandlers(false);
+        logger.setLevel(Level.INFO);
+        handler.setLevel(Level.INFO);
         
         Agencia agenciaTeste = new Agencia(3);
         ContaPoupanca contaPoupanca = new ContaPoupanca(765, 0.07, agenciaTeste);
@@ -45,7 +48,7 @@ import static org.junit.jupiter.api.Assertions.*;
         
         String logs = handler.getLog();
         assertTrue(logs.contains("Conta Poupança"));
-        assertTrue(logs.contains("Saldo Atual"));
+        assertTrue(logs.contains("Saldo atual"));
     }
     
     static class TestLogHandler extends Handler {
