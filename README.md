@@ -29,6 +29,7 @@ Procedimentos:
 3. retorna Id = 1 em test GetNumero.
 
 Espificação de Saida:
+
 Saida esperada 1 
 
 ## ID Do Caso de Teste: CT-002
