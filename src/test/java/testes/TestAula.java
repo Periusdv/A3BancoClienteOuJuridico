@@ -11,6 +11,7 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Scanner;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.util.logging.*;
@@ -91,6 +92,8 @@ class TestAula {
         
         // Scanner que simula a entrada do usuario 
         Scanner scanner = new Scanner(new ByteArrayInputStream(inputSimulado.getBytes()));
+        // Ajusta o Locale para pt_BR para interpretar vírgula como separador decimal
+        scanner.useLocale(new Locale("pt", "BR"));
         
         // Instancia o servico da aplicação
         AulaServico servico = new AulaServico();
