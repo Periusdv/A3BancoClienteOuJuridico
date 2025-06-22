@@ -120,13 +120,15 @@ Nehuma saida pode ser vista nem mesmo pelo Systema.
 ## ID Do Caso de Teste: CT-005
 
 Item do Teste:TestPessoaFisica 
-dentro dele ha testConstrutorPessoaFisica,testSetCPF.
+dentro dele ha testConstrutorPessoaFisica,testSetCPF,testSetNome.
 
 Expecificação De Entrada:
 
 1.testConstrutorPessoaFisica: Agencia 1,Nome Pedro,CPF 123.456.789-00,Conta 123,Salario 2500.0.
 
 2.testSetCPF:Nome Pedro, CPF 111.222.333-44.
+
+3.testSetNome:Nome Carlos Alberto,CPF 196.348,296-00.
 
 Procedimento:
 Sobre o procedimento de ambos os testes eles etão injetando/modificando as informações dentro do teste para serem verificados coretamente.
