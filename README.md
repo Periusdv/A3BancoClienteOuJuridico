@@ -106,7 +106,7 @@ Expecificação De Entrada:
 
 1.testGetRendimento:Rendimento 0,05,Conta poupanca.
 
-2.testSetRendimento:Rendimento 0,07,Conta poupanca.
+2.testSetRendimento:Rendimento inicial 0,05,Rendimento Final 0,07,Conta poupanca.
 
 3.testImprimir:Chama Imprimir com informações de conta corrente.
 
@@ -116,7 +116,9 @@ sobre o procedimeto geral dos 2 primeiros testes os testes vao simular uma inje�
 no ultimo testes o imprimir ele mostra o seu rendimento.
 
 Espificação de Saida:
-Nehuma saida pode ser vista nem mesmo pelo Systema.
+a saida em testeGetRendimento e o retorno de 0,05 do rendimento.
+a saida em testSetRendimento e o getRendimento que retorna 0,07 em seu rendimento.
+a saida em Imprimir e conta poupanca e o  saldo atual.
 
 ## ID Do Caso de Teste: CT-005
 
@@ -127,15 +129,17 @@ Expecificação De Entrada:
 
 1.testConstrutorPessoaFisica: Agencia 1,Nome Pedro,CPF 123.456.789-00,Conta 123,Salario 2500.0.
 
-2.testSetCPF:Nome Pedro, CPF 111.222.333-44.
+2.testSetCPF:Nome Pedro, CPF inicial 000.000.000-00,CPF Final 111.222.333-44.
 
-3.testSetNome:Nome Carlos Alberto,CPF 196.348,296-00.
+3.testSetNome:Nome Inicial Carlos,Nome Final Pedro Alberto,CPF 196.348,296-00.
 
 Procedimento:
 Sobre o procedimento de ambos os testes eles etão injetando/modificando as informações dentro do teste para serem verificados coretamente.
 
 Espificação de Saida:
-Nehuma saida pode ser vista nem mesmo pelo Systema.
+a saida em testConstrutorPessoaFisica e pedro e sua lista de contas que e 123 e sue cnpj 12.345.678/0000-00.
+a saida em testSetCpf e seu cpf diferente do primeiro.
+a saida em testSetNome e seu Nome diferente do primeiro.
 
 ## ID Do Caso de Teste: CT-006
 
@@ -146,10 +150,11 @@ Expecificação De Entrada:
 
 1.testConstrutorPessoaJuridica: Agencia 1,Nome Amanda ,Cnpj 12.345.678/0000-00,Conta 111,Salario 5000.
 
-2.testSetCnpj: Nome Amanda,cnpj 12.345.678/0000-00.
+2.testSetCnpj: Nome Amanda,cnpj Inicial 00.000.000/0000-00, cnpj Final 12.345.678/0000-00.
 
 Procedimento:
 Sobre o procedimento de ambos os testes eles etão injetando/modificando as informações dentro do teste para serem verificados coretamente.
 
 Espificação de Saida:
-Nehuma saida pode ser vista nem mesmo pelo Systema.
+a saida em testConstrutorPessoaJuridica e amanda e sua lista de contas que e 111 e sue cnpj 12.345.678/0000-00.
+a saida em testSetCnpj e seu cnpj diferente do primeiro.
