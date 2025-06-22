@@ -62,49 +62,52 @@ public class AulaUI {
     private void executarLoopOperacoes(Scanner input, Pessoa pessoa, ContaCorrente cc, ContaPoupanca cp) {
         int contaEscolhida = -1;
         while (contaEscolhida != 3) {
-            LOGGER.info(String.format("Bem vindo(a) %s.%nInforme qual conta você deseja escolher:%n1: Conta Corrente%n2: Conta Poupança%n3: Sair", pessoa.getNome()));
-
+            if (LOGGER.isLoggable(Level.INFO)) {
+                LOGGER.info(String.format("Bem vindo(a) %s.%nInforme qual conta você deseja escolher:%n1: Conta Corrente%n2: Conta Poupança%n3: Sair", pessoa.getNome()));
+            }
             contaEscolhida = input.nextInt();
 
             if (contaEscolhida == 3) {
                 break;
             }
-
-            LOGGER.info(String.format("Informe qual Operação Bancaria você deseja realizar:%n1: Depositar%n2: Sacar%n3: Imprimir"));
-
+            if (LOGGER.isLoggable(Level.INFO)) {
+                LOGGER.info(String.format("Informe qual Operação Bancaria você deseja realizar:%n1: Depositar%n2: Sacar%n3: Imprimir"));
+            }
             int operacaoBancaria = input.nextInt();
             realizarOperacao(input, contaEscolhida, operacaoBancaria, cc, cp);
         }
     }
 
+    private Conta obterConta(int contaEscolhida, ContaCorrente cc, ContaPoupanca cp) {
+        if (contaEscolhida == 1) {
+            return cc;
+        }
+        if (contaEscolhida == 2) {
+            return cp;
+        }
+        return null;
+    }
+
     private void realizarOperacao(Scanner input, int contaEscolhida, int operacao, ContaCorrente cc, ContaPoupanca cp) {
-        double valor;
+        Conta conta = obterConta(contaEscolhida, cc, cp);
+        if (conta == null) {
+            LOGGER.warning("Conta não encontrada para a escolha informada.");
+            return;
+        }
 
         switch (operacao) {
-            case 1:
+            case 1: // Depositar
                 LOGGER.info("Informe o valor que deseja depositar:");
-                valor = input.nextDouble();
-                if (contaEscolhida == 1 && cc != null) {
-                    cc.depositar(valor);
-                } else if (contaEscolhida == 2 && cp != null) {
-                    cp.depositar(valor);
-                }
+                double valorDeposito = input.nextDouble();
+                conta.depositar(valorDeposito);
                 break;
-            case 2:
+            case 2: // Sacar
                 LOGGER.info("Informe o valor que deseja sacar:");
-                valor = input.nextDouble();
-                if (contaEscolhida == 1 && cc != null) {
-                    cc.sacar(valor);
-                } else if (contaEscolhida == 2 && cp != null) {
-                    cp.sacar(valor);
-                }
+                double valorSaque = input.nextDouble();
+                conta.sacar(valorSaque);
                 break;
-            case 3:
-                if (contaEscolhida == 1 && cc != null) {
-                    cc.imprimir();
-                } else if (contaEscolhida == 2 && cp != null) {
-                    cp.imprimir();
-                }
+            case 3: // Imprimir
+                conta.imprimir();
                 break;
             default:
                 LOGGER.warning("Operação inválida.");
