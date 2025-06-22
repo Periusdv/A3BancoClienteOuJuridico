@@ -42,13 +42,16 @@ Expecificação de Entrada:
 
 2.testPessoaJuridicaSemContas: Agencia 2,Nome Fredico,Fisica ou Juridica 1,Cnpj 9999999, Corente 2, Poupança 2,Deseja Fazer uma Operação Bacaria 2.
 
-3.testPessoaFisicaSomenteContaCorrente Agencia 2,Nome Willan Afthon,Fisica ou Juridica 2,CPF 9999999,Corente 1,Salario 300,000,Poupança 2,Deseja Fazer uma Operação Bacaria 2.
+3.testPessoaFisicaSomenteContaCorrente: Agencia 2,Nome Willan Afthon,Fisica ou Juridica 2,CPF 9999999,Corente 1,Salario 300,000,Poupança 2,Deseja Fazer uma Operação Bacaria 2.
 
-4.testPessoaFisicaSomentePoupanca Agencia 2,Nome Amilton,Fisica ou Juridica 2,CPF 9999999,Corente 2,Poupança 1,Rendimento 0,2,Deseja Fazer uma Operação Bacaria 2.
+4.testPessoaFisicaSomentePoupanca: Agencia 2,Nome Amilton,Fisica ou Juridica 2,CPF 9999999,Corente 2,Poupança 1,Rendimento 0,2,Deseja Fazer uma Operação Bacaria 2.
+
+5.testExecutarLoopOperacoes: Agencia 2,Nome Amilton,Fisica e Juridica ,CPF e Cnpj 9999999,Corente 1,Salario 100,Poupança 1,Rendimento 0,2,Imprimir 3, Sair 3.
 
 Procedimentos:
 
 Como procedimento principal desses testes o sistema primeiro faz a pergunta de qual agencia vc vai criar sua conta dps seu nome dps perguga se vc se uma pessoa juridica ou fisica caso vc seja juridica ira perguntar o cnpj caso não o cpf logo dps o sitema ira perguntar se vc quer criar uma conta corente com 1 para sim e 2 para não se sim o sitema  pergunta o salario se nao o sitema pergunta se vc quer criar uma poupança sem sim ele perguta qual o rendimento se não o sistema pergunta com 1 ou 2 se deseja criar uma conta bancaria se sim ira aparecer 3 opções 1 conta corrente conta poupança e sair se escolheu conta corente ira aparecer 1 depositar 2 sacar 3 imprimir caso escolha conta poupança ira aparecer as msm informaçoes a opção imprimir ela faz voltar para a 1 etapa da operação bancaria.
+Sobre testExecutarLoopOperacoes essse teste simula as açoes de Acesso de conta corente e poupança que dentro deles ha Depositar Sacar e imprimir.
 
 Espificação de Saida:
 Todas as Saidas estão relacionadas aos testes acima com a injeção de dados dentro da aplicação nehuma saida expecifica como caixas de texto apenas o prorpio sistema sendo auto testado com a ingeção de dados.
