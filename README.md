@@ -172,3 +172,11 @@ a saida em testSetCnpj e seu cnpj diferente do primeiro.
 Imagens dos testes:
 
 ![Image](https://github.com/user-attachments/assets/ba8daf71-6b14-4938-bc02-19de9792da06)
+
+![Image](https://github.com/user-attachments/assets/535b58c4-b5ba-4040-b804-c1ad0fd4c66c)
+
+![Image](https://github.com/user-attachments/assets/d1f28155-5c20-4d8b-a206-c8a7dfefb345)
+
+![Image](https://github.com/user-attachments/assets/e1b77a63-72e1-4e35-89f1-c4b4d2fd77ac)
+
+![Image](https://github.com/user-attachments/assets/4cc221b7-bcd1-4d0b-828a-8ebdc7b58657)
