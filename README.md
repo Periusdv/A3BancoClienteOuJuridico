@@ -19,9 +19,9 @@ Item do teste: TestAgencia
 dentro dele ha testConstrutorAgencia,testSetNumero,testGetNumero.
 
 Espexificação de Entrada:
-1. testConstrutorAgencia: ID 1 
-2. testSetNumero: ID 1
-3. testGetNumero: ID 1
+1. testConstrutorAgencia: Agencia 1. 
+2. testSetNumero: Agencia agencia = new Agencia(1); agencia.setNumero(1);.
+3. testGetNumero: Agencia agencia = new Agencia(1); int numero = agencia.getNumero();
 
 Procedimentos:
 1. Verifica se a agencia e igual a 1 no Id do testCostrutorAgencia.
