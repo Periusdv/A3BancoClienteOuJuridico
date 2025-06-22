@@ -168,3 +168,7 @@ Sobre o procedimento de ambos os testes eles etão injetando/modificando as info
 Espificação de Saida:
 a saida em testConstrutorPessoaJuridica e amanda e sua lista de contas que e 111 e sue cnpj 12.345.678/0000-00.
 a saida em testSetCnpj e seu cnpj diferente do primeiro.
+
+Imagens dos testes:
+
+![Image](https://github.com/user-attachments/assets/ba8daf71-6b14-4938-bc02-19de9792da06)
