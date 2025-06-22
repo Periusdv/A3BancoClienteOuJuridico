@@ -70,6 +70,39 @@ class TestContaCorrente {
         assertTrue(logContemTextoEsperado, "O log deveria conter as informações da conta.");
     }
 
+    @Test
+    void testSetSaldo() {
+        contacorrente.setSaldo(500.0);
+        assertEquals(500.0, contacorrente.getSaldo(), 0.001);
+    }
+
+    @Test
+    void testSetAgencia() {
+        Agencia novaAgencia = new Agencia(99);
+        contacorrente.setAgencia(novaAgencia);
+        assertEquals(99, contacorrente.getAgencia().getNumero());
+    }
+
+    @Test
+    void testSetNumero() {
+        contacorrente.setNumero(777);
+        assertEquals(777, contacorrente.getNumero());
+    }
+
+    @Test
+    void testSacarComSaldoSuficiente() {
+        contacorrente.setSaldo(200.0);
+        contacorrente.sacar(100.0);
+        assertEquals(100.0, contacorrente.getSaldo(), 0.001);
+    }
+
+    @Test
+    void testSacarComSaldoInsuficiente() {
+        contacorrente.setSaldo(50.0);
+        contacorrente.sacar(100.0); // Não deve sacar nada
+        assertEquals(50.0, contacorrente.getSaldo(), 0.001);
+    }
+
     /**
      * Classe interna do handler customizado Propósito de capturar os logs
      * gerados no teste
@@ -83,7 +116,7 @@ class TestContaCorrente {
         public void publish(LogRecord logRecord) {
             logMessages.add(logRecord.getMessage());
         }
-        
+
         @Override
         public void flush() {
             //Métodos obrigatórios no handler, mas não utilizado
