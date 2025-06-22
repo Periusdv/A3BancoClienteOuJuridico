@@ -30,7 +30,7 @@ Procedimentos:
 
 Espificação de Saida:
 
-Saida esperada 1 
+Em todos os testes a saida esperada é 1 
 
 ## ID Do Caso de Teste: CT-002
 
