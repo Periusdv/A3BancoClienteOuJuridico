@@ -95,7 +95,17 @@ nos tests 6 ate 9 os testes se baseam interamente em testar o numero da agencia 
 no 10 teste e testado se e posivel sacar mais do que vc posui na conta.
 
 Espificação de Saida:
-Nehuma saida pode ser vista nem mesmo pelo Systema.
+a saida em testeGetSalario e o retorno de 2500 do Salario e tambem retorna o rendimento de 0,01.
+a saida em testSetSalario e o GetSalario de 2500 do Salario e tambem retorna o rendimento de 0,01.
+a saida em testNumeroConta e o retorno do numero da conta. 
+a saida em testAgenciaConta e o retorno do numero da conta da Agencia.
+a saida em Imprimir e Conta poupanca e Conta corrente.
+a saida em testSetSaldo e o retorno de 500.0 em seu saldo e de seu rendimento de 0,001.
+a saida em testSetAgencia e o retorno de 999 da agencia 
+a saida em testSetNumero  e o retorno de 777 do numero da conta.
+a saida em testSacarComSaldoSuficiente e o retorno do saldo de 200 e a retirada de 100 do saldo.
+a saida em testSacarComSaldoInsuficiente e o retorno de saldo 50 e a tentativa de retirar 100 de saldo nehuma operação deve ocorer.
+
 
 ## ID Do Caso de Teste: CT-004
 
