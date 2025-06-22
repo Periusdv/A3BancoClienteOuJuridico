@@ -55,10 +55,10 @@ class TestContaCorrente {
         logger.setUseParentHandlers(false);
 
         //Cria uma instancia para Agencia
-        Agencia agencia = new Agencia(2);
+        Agencia agenciaTeste = new Agencia(2);
 
         //Cria uma instacia de ContaCorrente (número, salário e agência)
-        ContaCorrente contaCorrente = new ContaCorrente(123, 2000.0, agencia);
+        ContaCorrente contaCorrente = new ContaCorrente(123, 2000.0, agenciaTeste);
 
         //Realiza depósito para alterar o saldo
         contaCorrente.imprimir();
@@ -80,17 +80,19 @@ class TestContaCorrente {
 
         //Captura cada mensagen de log
         @Override
-        public void publish(LogRecord record) {
-            logMessages.add(record.getMessage());
+        public void publish(LogRecord logRecord) {
+            logMessages.add(logRecord.getMessage());
         }
         
-        //Métos obrigatórios no handler, mas não utilizado
         @Override
-        public void flush() {}
+        public void flush() {
+            //Métodos obrigatórios no handler, mas não utilizado
+        }
 
-        // Método obrigatório, mas não utilizado
         @Override
-        public void close() throws SecurityException {}
+        public void close() throws SecurityException {
+            //Métodos obrigatórios no handler, mas não utilizado
+        }
 
         //Retorna as mensagens dos logs capturados
         public java.util.List<String> getLog() {
