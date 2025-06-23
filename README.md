@@ -178,6 +178,43 @@ Espificação de Saida:
 a saida em testConstrutorPessoaJuridica e amanda e sua lista de contas que e 111 e sue cnpj 12.345.678/0000-00.
 a saida em testSetCnpj e seu cnpj diferente do primeiro.
 
+Correção do programa:
+No início do desenvolvimento do projeto foi identificado nas classes, PessoaJuridica e PessoaFisica um método usando int ao invés de String
+Antes
+public class PessoaJuridica extends Pessoa{
+    private int cnpj;
+    PessoaJuridica(String nome, ArrayList<Conta> listacontas, int cnpj){
+        super(nome, listacontas);
+        this.cnpj = cnpj;
+    }
+    public int getCnpj(){
+        return this.cnpj;
+    }
+
+    public void setCnpj(int cnpj){
+        this.cnpj = cnpj;
+    }
+}
+
+Depois:
+public class PessoaJuridica extends Pessoa {
+
+    private String cnpj;
+
+    public PessoaJuridica(String nome, List<Conta> listacontas, String cnpj) {
+        super(nome, listacontas);
+        this.cnpj = cnpj;
+    }
+
+    public String getCnpj() {
+        return this.cnpj;
+    }
+
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
+    }
+}
+
 Imagens dos testes:
 
 ![Image](https://github.com/user-attachments/assets/ba8daf71-6b14-4938-bc02-19de9792da06)
