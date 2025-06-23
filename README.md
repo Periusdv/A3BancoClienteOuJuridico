@@ -216,6 +216,14 @@ Depois:
         this.cnpj = cnpj;
     }
 
+Outro fator que encontramos durante o desenvolvimento foi que a classe aula por ser a "Principal" do projeto impedia de aumentar o code coverage, então decidimos separa-lá em tres classes conectadas para aumentar o code coverage
+
+Antes:
+Classe - > Aula.java
+
+Depois:
+Classes - > Aula.java / AulaUI.java / AulaServico.java
+
 Imagens dos testes:
 
 ![Image](https://github.com/user-attachments/assets/ba8daf71-6b14-4938-bc02-19de9792da06)
