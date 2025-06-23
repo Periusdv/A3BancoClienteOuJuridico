@@ -180,8 +180,10 @@ a saida em testSetCnpj e seu cnpj diferente do primeiro.
 
 Correção do programa:
 No início do desenvolvimento do projeto foi identificado nas classes, PessoaJuridica e PessoaFisica um método usando int ao invés de String
-Antes
-public class PessoaJuridica extends Pessoa{
+
+Antes:
+
+    public class PessoaJuridica extends Pessoa{
     private int cnpj;
     PessoaJuridica(String nome, ArrayList<Conta> listacontas, int cnpj){
         super(nome, listacontas);
@@ -196,8 +198,8 @@ public class PessoaJuridica extends Pessoa{
     }
 }
 
+
 Depois:
-public class PessoaJuridica extends Pessoa {
 
     private String cnpj;
 
@@ -213,7 +215,6 @@ public class PessoaJuridica extends Pessoa {
     public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
     }
-}
 
 Imagens dos testes:
 
