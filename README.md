@@ -224,6 +224,8 @@ Classe - > Aula.java
 Depois:
 Classes - > Aula.java / AulaUI.java / AulaServico.java
 
+![Image](https://github.com/user-attachments/assets/4b4c051a-d08e-433c-bde2-6314f448da1a)
+
 Imagens dos testes:
 
 ![Image](https://github.com/user-attachments/assets/ba8daf71-6b14-4938-bc02-19de9792da06)
