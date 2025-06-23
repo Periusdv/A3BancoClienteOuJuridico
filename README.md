@@ -95,15 +95,25 @@ nos tests 6 ate 9 os testes se baseam interamente em testar o numero da agencia 
 no 10 teste e testado se e posivel sacar mais do que vc posui na conta.
 
 Espificação de Saida:
+
 Salário da conta: 2500.0
+
 Número da conta: 1234
+
 Número da agência: 1
+
 Definição de salário: após getSalario() 2500.0
+
 Definição de saldo: após getSaldo() 500.0
+
 Saque com saldo suficiente: após getSaldo() 100.0
+
 Saque com saldo insuficiente: após getSaldo() 50.0(sem alteração)
+
 Alteração de agência: após getAgencia().getNumero() 99
+
 Alteração de número da conta: após getNumero() 777
+
 Impressão de informações da conta(log): "Conta Corrente", "Salário"
 
 ## ID Do Caso de Teste: CT-004
