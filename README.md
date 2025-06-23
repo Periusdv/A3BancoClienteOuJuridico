@@ -95,17 +95,16 @@ nos tests 6 ate 9 os testes se baseam interamente em testar o numero da agencia 
 no 10 teste e testado se e posivel sacar mais do que vc posui na conta.
 
 Espificação de Saida:
-a saida em testeGetSalario e o retorno de 2500 do Salario e tambem retorna o rendimento de 0,01.
-a saida em testSetSalario e o GetSalario de 2500 do Salario e tambem retorna o rendimento de 0,01.
-a saida em testNumeroConta e o retorno do numero da conta. 
-a saida em testAgenciaConta e o retorno do numero da conta da Agencia.
-a saida em Imprimir e Conta poupanca e Conta corrente.
-a saida em testSetSaldo e o retorno de 500.0 em seu saldo e de seu rendimento de 0,001.
-a saida em testSetAgencia e o retorno de 999 da agencia 
-a saida em testSetNumero  e o retorno de 777 do numero da conta.
-a saida em testSacarComSaldoSuficiente e o retorno do saldo de 200 e a retirada de 100 do saldo.
-a saida em testSacarComSaldoInsuficiente e o retorno de saldo 50 e a tentativa de retirar 100 de saldo nehuma operação deve ocorer.
-
+Salário da conta: 2500.0
+Número da conta: 1234
+Número da agência: 1
+Definição de salário: após getSalario() 2500.0
+Definição de saldo: após getSaldo() 500.0
+Saque com saldo suficiente: após getSaldo() 100.0
+Saque com saldo insuficiente: após getSaldo() 50.0(sem alteração)
+Alteração de agência: após getAgencia().getNumero() 99
+Alteração de número da conta: após getNumero() 777
+Impressão de informações da conta(log): "Conta Corrente", "Salário"
 
 ## ID Do Caso de Teste: CT-004
 
